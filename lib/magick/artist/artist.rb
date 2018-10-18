@@ -1,5 +1,6 @@
 module Rubyplot
   class Artist
+    
     include Magick
 
     # Makes an array of colors randomly selected from all the possible list of
