@@ -1,4 +1,4 @@
-# SubPlots
+
 require 'magick/artist/subplots'
 
 # Artist Layer Base
@@ -28,9 +28,6 @@ require 'magick/scripting/line/geometry'
 
 # Scatter
 require 'magick/scripting/scatter/scatter'
-require 'magick/scripting/scatter/constant'
-require 'magick/scripting/scatter/data'
-require 'magick/scripting/scatter/init'
 require 'magick/scripting/scatter/geometry'
 
 # Bubble

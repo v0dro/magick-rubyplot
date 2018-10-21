@@ -11,8 +11,8 @@ require 'bubble/bubble_gen'
 require 'stacked_bar/stacked_gen'
 
 class RubyplotSpec
-  def self.describe *args, &block
-    [:GR, :magick].each do |backend|
+  def self.describe(*args, &block)
+    %i[GR magick].each do |backend|
       Rubyplot.backend = backend
       ::RSpec.describe args, &block
     end
@@ -33,8 +33,6 @@ end
 def compute_rms(test_image, reference_image)
   image1 = Magick::Image.read(('spec/reference_images/' + test_image)).first
   image2 = Magick::Image.read(('spec/reference_images/' + reference_image)).first
-  puts "image1: #{image1.export_pixels.size}"
-  puts "image2: #{image2.export_pixels.size}"
   diff = 0
   pixel_array_1 = image1.export_pixels
   pixel_array_2 = image2.export_pixels

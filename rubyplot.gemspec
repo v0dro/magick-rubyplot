@@ -1,6 +1,6 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'common/version'
+require 'rubyplot/version'
 
 Gem::Specification.new do |s|
   s.name = 'magick-rubyplot'
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT license'
   s.homepage    = 'https://github.com/Arafatk/magick-rubyplot'
   s.extensions  = ['ext/grruby/extconf.rb']
-  
+
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rake-compiler'
