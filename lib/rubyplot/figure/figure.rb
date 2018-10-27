@@ -121,9 +121,10 @@ module Rubyplot
         @active_subplotGR.y_range[1] = y_coordinates.max if @active_subplotGR.y_range[1].nil?
         @active_subplotGR.y_range[0] = y_coordinates.min if y_coordinates.min < @active_subplotGR.y_range[0]
         @active_subplotGR.y_range[1] = y_coordinates.max if y_coordinates.max > @active_subplotGR.y_range[1]
-        @active_subplotGR.tasks.push(Rubyplot::Scripting::Plots::Scatter.new(x_coordinates, y_coordinates,
-                                                                             marker_size: marker_size, marker_color: marker_color,
-                                                                             marker_type: marker_type))
+        @active_subplotGR.tasks.push(Rubyplot::Scripting::Plots::Scatter.new(
+                                      x_coordinates, y_coordinates,
+                                      marker_size: marker_size, marker_color: marker_color,
+                                      marker_type: marker_type))
       else
         @init += 1
         if @init == 1
