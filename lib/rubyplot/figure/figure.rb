@@ -113,14 +113,22 @@ module Rubyplot
     def scatter!(x_coordinates, y_coordinates, marker_size: :default,
                  marker_color: :default, marker_type: :default, label: :default)
       if @backend == :default || @backend == :GR
-        @active_subplotGR.x_range[0] = x_coordinates.min if @active_subplotGR.x_range[0].nil?
-        @active_subplotGR.x_range[1] = x_coordinates.max if @active_subplotGR.x_range[1].nil?
-        @active_subplotGR.x_range[0] = x_coordinates.min if x_coordinates.min < @active_subplotGR.x_range[0]
-        @active_subplotGR.x_range[1] = x_coordinates.max if x_coordinates.max > @active_subplotGR.x_range[1]
-        @active_subplotGR.y_range[0] = y_coordinates.min if @active_subplotGR.y_range[0].nil?
-        @active_subplotGR.y_range[1] = y_coordinates.max if @active_subplotGR.y_range[1].nil?
-        @active_subplotGR.y_range[0] = y_coordinates.min if y_coordinates.min < @active_subplotGR.y_range[0]
-        @active_subplotGR.y_range[1] = y_coordinates.max if y_coordinates.max > @active_subplotGR.y_range[1]
+        @active_subplotGR.x_range[0] = x_coordinates.min if
+          @active_subplotGR.x_range[0].nil?
+        @active_subplotGR.x_range[1] = x_coordinates.max if
+          @active_subplotGR.x_range[1].nil?
+        @active_subplotGR.x_range[0] = x_coordinates.min if
+          x_coordinates.min < @active_subplotGR.x_range[0]
+        @active_subplotGR.x_range[1] = x_coordinates.max if
+          x_coordinates.max > @active_subplotGR.x_range[1]
+        @active_subplotGR.y_range[0] = y_coordinates.min if
+          @active_subplotGR.y_range[0].nil?
+        @active_subplotGR.y_range[1] = y_coordinates.max if
+          @active_subplotGR.y_range[1].nil?
+        @active_subplotGR.y_range[0] = y_coordinates.min if
+          y_coordinates.min < @active_subplotGR.y_range[0]
+        @active_subplotGR.y_range[1] = y_coordinates.max if
+          y_coordinates.max > @active_subplotGR.y_range[1]
         @active_subplotGR.tasks.push(Rubyplot::Scripting::Plots::Scatter.new(
                                       x_coordinates, y_coordinates,
                                       marker_size: marker_size, marker_color: marker_color,
